@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe convert
+    kompose.version: 1.32.0 (765fde254)
+  labels:
+    io.kompose.service: config-server
+  name: config-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: config-server
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe convert
+        kompose.version: 1.32.0 (765fde254)
+      labels:
+        io.kompose.network/twitter-on-k8s-spring: "true"
+        io.kompose.service: config-server
+    spec:
+      containers:
+        - env:
+            - name: EUREKA_HOST
+              value: eureka-server
+            - name: ZIPKIN_HOST
+              value: zipkin
+          image: merikbest/twitter-spring-reactjs:config-server
+          name: config-server
+          ports:
+            - containerPort: 8888
+              hostPort: 8888
+              protocol: TCP
+      hostname: config-server
+      restartPolicy: Always
