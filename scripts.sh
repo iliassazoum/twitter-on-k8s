@@ -10,3 +10,6 @@ CREATE DATABASE topic;
 CREATE DATABASE tweet;
 CREATE DATABASE user;
 
+////
+docker exec -it postgres psql -U postgres
+
