@@ -1,0 +1,17 @@
+{
+  "name": "Docker Compose",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "app",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [
+    5432, 5050, 9411, 5672, 15672, 3001, 9090, 8761, 8888, 8000, 8001, 8002,
+    8003, 8004, 8005, 8006, 8007, 8020, 8021, 8022
+  ],
+  "extensions": ["ms-azuretools.vscode-docker"],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
+  },
+  "remoteUser": "root"
+}
