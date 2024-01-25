@@ -122,7 +122,7 @@ services:
 
     frontend:
         container_name: frontend
-        image: azoum271/twitter:latest  # Updated image tag
+        image: azoum271/twitter2:latest  # Updated image tag
         ports:
             - "8081:80"  # Map the frontend service to port 8081 on the host
         networks:
