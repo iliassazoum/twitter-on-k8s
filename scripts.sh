@@ -8,7 +8,7 @@ CREATE DATABASE notification;
 CREATE DATABASE tag;
 CREATE DATABASE topic;
 CREATE DATABASE tweet;
-CREATE DATABASE user;
+CREATE DATABASE "user";
 
 ////
 docker exec -it postgres psql -U postgres
